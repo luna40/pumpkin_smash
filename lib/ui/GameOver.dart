@@ -18,14 +18,14 @@ class StartGame extends StatelessWidget {
             Column(
               children: [
                 const Text(
-                  'Pumpkin Smash',
+                  'Game Over !',
                   style: TextStyle(
-                      color: Colors.deepOrangeAccent,
+                      color: Colors.amberAccent,
                       fontSize: 35,
                       fontWeight: FontWeight.bold),
                 ),
                 SizedBox(
-                  height: 100,
+                  height: 120,
                   child: Lottie.network(
                     'https://assets6.lottiefiles.com/packages/lf20_fd83HLtqZt.json',
                     repeat: true,
@@ -83,40 +83,31 @@ class StartGame extends StatelessWidget {
                           ),
                         ],
                       ),
-                      SizedBox(
-                        height: 8,
-                      ),
-                      SizedBox(
-                        height: 50, //height of button
-                        width: 250,
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                              shape: const StadiumBorder()),
-                          onPressed: () {
-                            Navigator.push<dynamic>(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const AppTwo(),
-                              ),
-                            );
-                          },
-                          child: const Text('Start'),
-                        ),
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            shape: const StadiumBorder()),
+                        onPressed: () {
+                          Navigator.push<dynamic>(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const AppTwo(),
+                            ),
+                          );
+                        },
+                        child: const Text('New game'),
                       ),
                     ],
                   ),
                 ),
               ),
             ),
-            Expanded(
-              child: SizedBox(
-                height: 200,
-                child: Lottie.network(
-                  'https://assets8.lottiefiles.com/packages/lf20_pWTOxQsYjN.json',
-                  repeat: true,
-                  reverse: false,
-                  animate: true,
-                ),
+            SizedBox(
+              height: 200,
+              child: Lottie.network(
+                'https://assets8.lottiefiles.com/packages/lf20_pWTOxQsYjN.json',
+                repeat: true,
+                reverse: false,
+                animate: true,
               ),
             ),
           ],
